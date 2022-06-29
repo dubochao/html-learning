@@ -1,22 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <table>
+    <form  action="#" method="get">
+
+    <table width="600" align="center" >
         <tr>
             <td>
-                性别:
+                性别 : 
+            </td>
+            <td >
+                <input type="radio" name="radio" id="man"><label for="man"> 男 </label>
+                <input type="radio" name="radio" id="woman"><label for="woman"> 女 </label>
+             </td>
+        </tr>
+        <tr>
+            <td>
+                生日 : 
             </td>
             <td>
-                <input type="checkbox" name="man" id="checkbox">
-                <input type="checkbox" name="woman" id="checkbox">
+                <select name="shengri" id="nian">
+                    <option >--请选择年--</option>
+                </select>
+                <select name="shengri" id="yue">
+                    <option >--请选择月--</option>
+                </select>
+                <select name="shengri" id="ri">
+                    <option >--请选择日--</option>
+                </select>
+             </td>
+
+        </tr>
+        <tr>
+            <td>
+                喜欢类型 : 
             </td>
+            <td>
+                <input type="checkbox" name="checkbox" id="c-man"><label for="c-man"> 男 </label>
+                <input type="checkbox" name="checkbox" id="c-woman"><label for="c-woman"> 女 </label>
+             </td>
+
+             
+        </tr>
+        <tr>
+            <td>
+                     
+            </td>
+            <td>
+                <input type="submit" name="submit" id="submit" value="提交">
+             </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <h5>我承诺：</h5>
+                <ul>
+                    <li>1.承诺1</li>
+                    <li>2.承诺1</li>
+                    <li>3.承诺1</li>
+                </ul>
+             </td>
+
         </tr>
     </table>
+            
+</form>
+
+    <script>
+            for(var nian=1997;nian<=2020;nian++){
+                $('#nian').append('<option >'+nian +'</option>')
+            }
+            for(var yue=1;yue<=12;yue++){
+                $('#yue').append('<option >'+yue +'</option>')
+            }
+            for(var ri=1;ri<=31;ri++){
+                $('#ri').append('<option >'+ri +'</option>')
+            }
+    </script>
 </body>
 </html>
