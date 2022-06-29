@@ -18,26 +18,21 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 <div class="cnblogs_code">
 <pre>androidapk/xihuanni</pre>
 </div>
-<p>如图所示：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327131749963-456352665.png" alt=""></p>
 <p>这样就进入到了我们需要创建代码仓库的文件目录下了。</p>
 <p>然后输入命令：</p>
 <div class="cnblogs_code">
 <pre>git init</pre>
 </div>
 <p>这样就完成了创建代码仓库的操作，创建完之后会在androidapk/xihuanni文件夹下生成一个隐藏的git文件夹，这个文件夹就是用来记录git操作的，如图所示：</p>
-<p><br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327132146165-942920548.png" alt=""></p>
 <p>&nbsp;</p>
-<p>仓库创建完成之后我们可以通过ls -al&nbsp;命令来查看一下所有的Git操作，如图所示：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327132314237-1114155176.png" alt="" width="804" height="390"></p>
-<p><strong><span style="font-size: 14pt">第三步.提交本地代码：</span></strong><br>代码仓库创建完成之后就可以十分顺利地进行提交本地的代码了，首先我们需要在github上找到和我们相连接的https链接，首先在github上创建一个代码仓库，创建好之后找到clone and download，如下图所示：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327215151154-1619851460.png" alt="" width="1044" height="388"></p>
+<p><strong><span style="font-size: 14pt">第三步.提交本地代码：</span></strong><br>代码仓库创建完成之后就可以十分顺利地进行提交本地的代码了，首先我们需要在github上找到和我们相连接的https链接，首先在github上创建一个代码仓库，创建好之后找到clone and download<br></p>
 <p>点击之后就会出现Clone with https的字样，然后我们将下面的https://github.........的链接复制，你的链接和我的是不一样的。这个时候我们再在git bash上输入代码：</p>
 <div class="cnblogs_code">
 <pre>git clone https:<span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">github.com/Geeksongs/biaobai.git</span></pre>
 </div>
-<p>如图所示：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327215547632-283108333.png" alt=""></p>
+
 <p>这个时候我们电脑上的文件目录下就会出现我们刚刚在github上所创建的仓库名所表示的文件夹，如下图所示，我们把以前的文件和文件夹都复制到这个新出现的文件夹里：</p>
-<p><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327215735019-879727903.png" alt=""></p>
-<p>然后再到命令行模式里将文件的目录切换到该文件夹里，即biaobai里：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327215903833-758207672.png" alt="" width="707" height="61"></p>
+<p>然后再到命令行模式里将文件的目录切换到该文件夹里，即biaobai里</p>
 <p>然后添加该文件夹下所有的代码到git本地仓库里。输入以下代码：</p>
 <div class="cnblogs_code">
 <pre>git add .</pre>
@@ -46,16 +41,14 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 <div class="cnblogs_code">
 <pre>git commit -m <span style="color: rgba(128, 0, 0, 1)">"</span><span style="color: rgba(128, 0, 0, 1)">First commit</span><span style="color: rgba(128, 0, 0, 1)">"</span></pre>
 </div>
-<p>出现以下情况：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327220231331-963924270.png" alt="" width="843" height="701"></p>
 <p>最后，棋差一着，再写上：</p>
 <div class="cnblogs_code">
 <pre>git push -u origin master</pre>
 </div>
-<p>这个时候就是把代码全部递交到github上的时候了，但是系统会要求你输入你github的用户名和密码，由于笔者下载了github的客户端，因此在跳出的客户端当中输入：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327220428759-1157442641.png" alt=""></p>
+<p>这个时候就是把代码全部递交到github上的时候了，但是系统会要求你输入你github的用户名和密码，由于笔者下载了github的客户端，因此在跳出的客户端当中输入</p>
 <p>没有安装客户端的也没有关系，因为你也可以直接在命令行模式进行输入，登陆成功即可。</p>
-<p>一旦登陆成功，则会进行代码上传github，最后上床成功的界面如下：<br><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327220543256-1802886057.png" alt="" width="762" height="229"></p>
+<p>一旦登陆成功，则会进行代码上传github，最后上床成功的界面如下：</p>
 <p>这个时候您所新建的github仓库就会和您自己本地的代码文件一模一样了，</p>
-<p><img src="https://img2018.cnblogs.com/blog/1363478/201903/1363478-20190327220700641-404799027.png" alt=""></p>
 <p>&nbsp;</p>
 <p>得解也！！<br><br></p>
 </div>
