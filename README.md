@@ -1,13 +1,3 @@
-<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/geeksongs/p/10606906.html">
-    <span role="heading" aria-level="2">Git学习：如何登陆以及创建本地代码仓库、并提交本地代码至Github(最简单方法)</span>
-    
-</a>
-
-            </h1>
-            <div class="clear"></div>
-            <div class="postBody">
-                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
-<p>在我们的实际开发当中，代码经常会被公司要求上传到网络上，能够大家共同完成一个项目，因此掌握git技能也是一项必不可少的技能了，这里我们来学习以下基本的git操作。首先我们要想使用git这个东西需要把它安装好，具体安装的部分可参见其他大佬的博客：https://blog.csdn.net/sishen47k/article/details/80211002</p>
 <p><strong><span style="font-size: 14pt">第一步.登录</span></strong></p>
 <p>在我们的git操作当中，登录和注册是一体化的，直接在命令行模式下输入自己的用户名和登录的邮箱即可，首先我们的点击电脑上的“win”键，然后搜索git bash，打开之后就是我们的命令行界面了。<br>需要输入的代码如下，每输入一行代码就按下一个回车键即可：</p>
 <div class="cnblogs_code">
