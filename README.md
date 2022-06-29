@@ -43,6 +43,7 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 </div>
 <p>最后，棋差一着，再写上：</p>
 <div class="cnblogs_code">
+<pre>git pull origin master</pre>
 <pre>git push origin master</pre>
 </div>
 <p>这个时候就是把代码全部递交到github上的时候了，但是系统会要求你输入你github的用户名和密码，由于笔者下载了github的客户端，因此在跳出的客户端当中输入</p>
