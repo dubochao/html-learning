@@ -32,7 +32,7 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 </div>
 
 <p>这个时候我们电脑上的文件目录下就会出现我们刚刚在github上所创建的仓库名所表示的文件夹，如下图所示，我们把以前的文件和文件夹都复制到这个新出现的文件夹里：</p>
-<p>然后再到命令行模式里将文件的目录切换到该文件夹里，即biaobai里</p>
+<pre>然后再到命令行模式里将文件的目录切换到该文件夹里，即cd biaobai里</pre>
 <p>然后添加该文件夹下所有的代码到git本地仓库里。输入以下代码：</p>
 <div class="cnblogs_code">
 <pre>git add .</pre>
@@ -43,7 +43,7 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 </div>
 <p>最后，棋差一着，再写上：</p>
 <div class="cnblogs_code">
-<pre>git push -u origin master</pre>
+<pre>git push origin master</pre>
 </div>
 <p>这个时候就是把代码全部递交到github上的时候了，但是系统会要求你输入你github的用户名和密码，由于笔者下载了github的客户端，因此在跳出的客户端当中输入</p>
 <p>没有安装客户端的也没有关系，因为你也可以直接在命令行模式进行输入，登陆成功即可。</p>
