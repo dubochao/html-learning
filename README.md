@@ -32,7 +32,7 @@ git config </span>--<span style="color: rgba(0, 0, 255, 1)">global</span> user.e
 </div>
 
 <p>这个时候我们电脑上的文件目录下就会出现我们刚刚在github上所创建的仓库名所表示的文件夹，如下图所示，我们把以前的文件和文件夹都复制到这个新出现的文件夹里：</p>
-<p>然后再到命令行模式里将文件的目录切换到该文件夹里，即biaobai里</p>
+<pre>然后再到命令行模式里将文件的目录切换到该文件夹里，即cd biaobai里</pre>
 <p>然后添加该文件夹下所有的代码到git本地仓库里。输入以下代码：</p>
 <div class="cnblogs_code">
 <pre>git add .</pre>
