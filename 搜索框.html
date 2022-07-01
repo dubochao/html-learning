@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ZUI 标准版压缩后的 CSS 文件 -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/zui/1.10.0/css/zui.min.css">
+
+    <!-- ZUI Javascript 依赖 jQuery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zui/1.10.0/lib/jquery/jquery.js"></script>
+    <!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zui/1.10.0/js/zui.min.js"></script>
+</head>
+<body>
+    <div class="input-group">
+        <div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchbox">
+          <input id="inputSearch" type="search" class="form-control search-input" placeholder="搜索">
+          <label for="inputSearch" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+        </div>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">搜索</button>
+        </span>
+      </div>
+
+    <script>
+        // var key;
+        $('#searchbox').searchBox({
+            escToClear: true, // 设置点击 ESC 键清空搜索框
+            listenEvent:'change paste',
+            inputSelector:'input[type="search"]',
+            onSearchChange: function(searchKey, isEmpty) {
+                window.key=searchKey
+        }
+        });
+        $('button.btn.btn-primary').on('click', function() {
+                // var $btn = $(this);
+                // $btn.button('loading');
+
+                // 此处使用 setTimeout 来模拟复杂功能逻辑
+                // setTimeout(function() {
+                //     $btn.button('reset');
+                // }, 2000);
+                console.log('搜索框文本变更：',window.key);
+                });
+        
+    
+    </script>
+</body>
+</html>
