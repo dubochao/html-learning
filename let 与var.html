@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 声明提前
+    var name ='test';
+    console.log(name);
+    // let和const虽然也会发生变量提升，但是没有任何初始值。会报错
+    // 块级作用域
+    {
+    var a = 'Smiley';
+    }
+    // let和const只在块级作用域中有效
+    console.log(a)  	// 能正确打印出Smiley
+    // let和const不允许重复声明
+// let和const不会绑定全局作用域
+
+
+// let和const之间的区别
+        const obj = {
+            a: 12
+        }
+        obj.a = 1;
+        // const是常量，不能被更改.  obj = ‘abc’  会报错的。
+        // 指针指向的东西改变了，但只要指针没有改变，就不会报错的。
+        console.log(obj)
+</script>
+</body>
+</html>

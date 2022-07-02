@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .ico{
+            width: 50%;
+            height: 50%;
+            /* background-color: orange; */
+        }
+        #ico1{
+            /* width继承父元素 */
+            width: 25%;  
+            height: 50px;
+            background-color: rgb(32, 230, 69) ;
+        }
+        #ico2{
+             /* width只与屏幕宽度有关系 */
+            width: 25vw;
+            height: 50px;
+            background-color: rgb(29, 168, 211) ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "ico">
+        <div  id = 'ico1'>gfh</div>
+        <div  id = 'ico2'>gfhfgh</div>
+    </div>
+</body>
+</html>
