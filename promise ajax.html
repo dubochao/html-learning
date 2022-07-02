@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //基于Promise发送Ajax请求
+            function queryData(url) {
+            var p = new Promise(function(resolve,reject) {
+                    var xhr =  new XMLHttpRequest();
+                    //每当 readyState 改变时，就会触发 onreadystatechange 事件
+                    xhr.onreadystatechange =function() {
+                        if(xhr.readyState != 4) return;
+                        if(xhr.readyState === 4 && xhr.status  ===200) {
+                            resolve(xhr.responseText);//拿到响应数据(以文本形式)
+                        } else {
+                            reject('服务器错误');
+                        }
+                    };
+                    xhr.open('get',url);
+                    xhr.send(null);
+                    });
+                    return p;
+                }
+            var p1 = queryData('http://localhost:8000/server1');
+            var p2 = queryData('http://localhost:8000/server1');
+            var p3 = queryData('http://localhost:8000/server1');
+            //promise.all 在拿到三个返回数据后打印三个值
+            Promise.all([p1,p2,p3]).then(function(result){
+                console.log('promise.all:',result)
+            })
+            //promise.race 在拿到第一个返回数据就只输出它的值
+            Promise.race([p1,p2,p3]).then(function(result){
+                console.log('promise.race',result)
+            })
+    </script>
+</body>
+</html>
