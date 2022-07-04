@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        input{
+            width: 190px;
+            height: 50px;
+            /* margin-left: 10px; */
+        }
+        .but{
+            width: 100px;
+            height: 54px;
+            color: white;
+            background-color: orangered;
+        }
+        ul li{
+            width: 388px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            border-left: 10px solid orange;
+            margin-top: 10px;
+            /* padding-left: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button class='but add'>添加</button>
+    <button class='but del'>删除</button>
+    <ul>
+        <li >跑步</li>
+        <li >背单词</li>
+    </ul>
+    <script>
+        let Storage =window.localStorage;
+        let item;
+        if(!window.localStorage){
+            alert('浏览器版本过低！！！');
+        }else if(Storage.a){
+           item = JSON.parse(Storage.a);
+           item.forEach((name)=>{
+            itemadd(name=name,start=true);
+            
+           })
+        }else {
+            Storage.a =JSON.stringify([]);
+            item = JSON.parse(Storage.a);
+        }
+        function itemadd(name=null ,start=false){
+            let inp = document.querySelector('input');
+            let k = document.querySelector('ul');
+            let li = document.createElement('li');
+            
+            // add
+            if (! start){
+                li.innerText=inp.value;
+                item.unshift(li.innerText);
+            }else{
+                li.innerText=name;
+            }
+
+            k.insertBefore(li,k.firstElementChild);
+            Storage.a =JSON.stringify(item);
+        }
+        function itemdel(){
+    
+            let ul = document.querySelector('ul');
+            // let k = document.querySelectorAll('li');
+            ul.removeChild(ul.firstElementChild);
+
+            // del
+            if(item){
+                item.shift(0);
+            };
+            Storage.a =JSON.stringify(item);
+        }
+        let but=document.getElementsByClassName('add')[0]
+        but.addEventListener('click',itemadd);
+        let del=document.getElementsByClassName('del')[0]
+        del.addEventListener('click',itemdel);
+        function clkli(name){
+        
+            let tagname=name.target.tagName;
+            if (tagname =='LI'){
+                // del
+                let index = item.indexOf(name.target.innerText)
+                if(index !=-1){
+                    item.shift(index);
+                };
+                name.target.remove();
+                Storage.a =JSON.stringify(item);
+            }
+        }
+        let lidel=document.querySelector('ul');
+        lidel.addEventListener('click',clkli);
+
+    </script>
+</body>
+</html>
