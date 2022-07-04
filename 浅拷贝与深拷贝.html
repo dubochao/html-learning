@@ -27,11 +27,46 @@
 
         console.log(arr1 , newarr1)
         // 二维数组 结构赋值 浅拷贝
-        let arr2 = [[1,2,3,4],[1,2,3,4]];
+        let arr2 = [[1,2,3,4],];
         let newarr2 =[...arr2];
         newarr2[0].push(5);
 
         console.log(arr2 , newarr2)
+
+        // 深拷贝 JSON
+        let aa = [
+            
+            {xiao:1,da:100,axsx:1, axax1:'xaxa',axax2:[1,2,3,4],cscs:{k:5}},
+            {xiao:1,da:100},
+            {xiao:1,da:100}
+        ]
+        let newaa = JSON.parse(JSON.stringify(aa));
+        newaa.push({id:8888})
+        console.log(aa,newaa);
+
+
+        
+        // 标准深拷贝 => 引用数据类型（数组、对象）
+        function deepclone( source){
+            // [] =>Array(  基类)   {} => Object
+            const aa1 = source.constructor=== Array ? [] : {};
+            for(let i in source){
+                if (source.hasOwnProperty(i)){
+                    if(source[i] && typeof source[i] ==="object"){
+                        // aa1[i].constructor === Array ? [] : {};
+                        aa1[i] = deepclone(source[i]);
+                    }else{
+                        aa1[i] = source[i];
+                    }
+                }
+
+            }
+            return aa1;
+        }
+
+        let newaa1 = deepclone(aa)
+        newaa1.ss=1515;
+        console.log(aa,newaa1);
     </script>
 </body>
 </html>
