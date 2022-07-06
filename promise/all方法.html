@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // .all  如果Promise 传输中有一个失败则返回失败   
+        // 如果全部成功则返回成功
+        // p.then() 得到异步任务的正确结果
+        // p.catch() 获取异常信息
+        // p.finally()成功与否都会执行（可以做一些提示信息）
+        function addvalue(a){
+            return a*2
+        }
+
+        let p3 = Promise.all([addvalue(1),addvalue(3),addvalue(2)]).then(function(result){
+            return result ;
+        })
+        p3.then(values=>{
+            console.log(values);
+        }).catch(reason =>{
+            console.log(reason);
+        })
+    </script>
+</body>
+</html>

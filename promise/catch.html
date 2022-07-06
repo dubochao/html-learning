@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 同步请求 顺序执行 -->
+<!-- 异步请求 跳过promise执行语句 等有结果后返回.then() -->
+<!-- 有任何异常都会直接跳到 catch 序列 -->
+<!-- .finally() 是在 Promise 执行的最后一定会执行的序列 -->
+<!-- resolve 和 reject 的作用域只有起始函数，不包括 then 以及其他序列； -->
+<!-- resolve 和 reject 并不能够使起始函数停止运行，别忘了 return。 -->
+    <script>
+        new Promise(function (resolve, reject) {
+            console.log(1111);
+            resolve(2222);
+        }).then(function (value) {
+            console.log(value);
+            // reject("An error")
+            // throw "An error";
+            return 4444
+        }).then(function (value) {
+            console.log(value);
+            return 3333;
+        }).catch(function (err) {
+            console.log(err);
+        }).finally(function () {
+            console.log('end');
+        });
+    </script>
+
+</body>
+</html>

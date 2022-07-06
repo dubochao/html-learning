@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- resolve reject  改变响应状态-->
+    <!-- then回调执行 -->
+    <script>
+        let p = new Promise((resolve,reject)=>{
+            resolve('ok');
+        });
+        let p2 = p.then((value)=>{
+            console.log(value);
+            // 回调函数抛出错误则返回错误值 throw 2233
+            // throw 2233
+            // 返回非Promise 类型结果  正常输出
+            // return 123;
+            // 返回Promise 类型结果  此 返回Promise决定成功状态 
+
+            return new Promise((resolve,reject)=>{
+                    resolve('success');
+                });
+        },(reason)=>{
+            console.log(reason);
+        });
+
+        console.log(p2);
+        //promise.all 在拿到三个返回数据后打印三个值
+        let p3 = Promise.all([1,2,3]).then(function(result){
+            return result ;
+        })
+        p3.then(values=>{console.log(values)})
+    </script>
+</body>
+</html>

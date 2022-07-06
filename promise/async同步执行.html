@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 异步函数 async function 中可以使用 await 指令，await 指令后必须跟着一个 Promise -->
+    <script>
+        async function asyncFunc() {
+            await console.log(1000, "First");
+            await console.log(4000, "Second");
+            await console.log(3000, "Third");
+        }
+        asyncFunc();
+    </script>
+</body>
+</html>
