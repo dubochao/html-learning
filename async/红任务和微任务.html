@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 首先执行同步任务  
+        然后 宏任务和微任务 加入消息队列  
+        等同步任务执行完调用微任务  
+        微任务执行完清空为任务队列  
+        执行同步任务 -->
+    <script>
+        // 宏任务
+        setTimeout(()=>{
+            console.log('123')
+        });
+        let p= new Promise((resolve,reject)=>{
+            // 同步任务
+            console.log('456')
+            resolve('789')
+        }
+        )
+        // 微任务
+        p.then(value => console.log(value));
+
+    </script>
+    
+</body>
+</html>
